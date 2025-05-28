@@ -1,8 +1,12 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Mematikan warning TF
+import tensorflow as tf
+tf.config.set_visible_devices([], 'GPU')  # Menonaktifkan GPU
+
 from flask import Flask, render_template, request, jsonify
 import numpy as np
 from tensorflow.keras.models import load_model
 import pickle
-import os
 
 app = Flask(__name__)
 
